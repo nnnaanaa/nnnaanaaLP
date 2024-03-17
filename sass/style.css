@@ -116,9 +116,13 @@
   left: 50%;
   top: 1rem;
   transform: translateX(-50%);
-  z-index: 9;
+  z-index: 9999;
   display: flex;
   justify-content: center;
+  transition: all 0.5s;
+}
+.nav-menu.scroll {
+  top: 0px;
 }
 .nav-menu ul {
   display: flex;
