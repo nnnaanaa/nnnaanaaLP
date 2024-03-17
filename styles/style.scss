@@ -1,0 +1,124 @@
+@use "base/variables";
+@use "pages/frame_border";
+@use "pages/navigation";
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Noto+Sans+JP&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: variables.$mainTextColor;
+    font-size: 100%;
+    height: 100vh;
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1.7;
+}
+
+.wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 4%;
+}
+
+.main-bg {
+    background: url("/img/background-img.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+
+.header {
+    height: 100vh;
+
+    .header-content {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 50vh 50vh;
+        padding-left: 50px;
+        padding-right: 50px;
+
+        .upper-content {
+            width: 100%;
+            display: flex;
+            align-items: end;
+
+            .rotate-word {
+                font-family: 'Cherry Bomb One', system-ui;
+                font-size: 7rem;
+                display: block;
+                height: 180px;
+                color: variables.$blueColor;
+                overflow: hidden;
+                animation: rotation-word 4s 1.2s infinite;
+
+                span[class~="rotate-word"] {
+                    display: block;
+                    animation: move-word 8s steps(2) infinite;
+                }
+            }
+            @keyframes rotation-word {
+                50% {
+                    transform: rotateX(0);
+                }
+                100% {
+                    transform: rotateX(1turn);
+                }
+            }
+            @keyframes move-word {
+                0% {
+                    transform: translateY(0px);
+                }
+                100% {
+                    transform: translateY(-340px);
+                }
+            }
+        }
+        .lower-content {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            .msg {
+                grid-column: 1 / 2;
+                grid-row: 1 / 2;
+                font-size: 1.25rem;
+                font-weight: 400;
+
+                display: flex;
+                align-items: end;
+                flex-direction: column;
+                font-family: 'Poppins', sans-serif;
+
+                a {
+                    color: variables.$blueColor2;
+                    position: relative;
+                    text-decoration: none;
+
+                    &::after {
+                        position: absolute;
+                        left: 0;
+                        content: '';
+                        width: 100%;
+                        height: 2px;
+                        background: variables.$blueColor2;
+                        bottom: -2px;
+                        transform: scale(0, 1);
+                        transform-origin: center top; /*変形（アンダーラインの伸長）の原点がaタグ（各メニュー）の右端*/
+                        transition: transform 0.3s;   /*変形の時間*/
+                    }
+
+                    &:hover {
+                        &::after {
+                            transform: scale(1, 1); /*ホバー後、x軸方向に1（相対値）伸長*/
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

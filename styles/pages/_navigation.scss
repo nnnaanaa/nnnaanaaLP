@@ -1,0 +1,42 @@
+@use "../base/variables";
+
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Noto+Sans+JP&display=swap');
+
+.nav-menu {
+    position: fixed;
+    left: 50%;
+    top: 0%;
+    transform: translateX(-50%);
+    z-index: 9;
+    padding-top: 1rem;
+
+    ul {
+        display: flex;
+        justify-content: center;
+        flex: 1;
+        list-style: none;
+
+        li:not(:last-child) {
+            margin-right: 50px;
+        }
+
+        li {
+            font-family: 'Cherry Bomb One', system-ui;
+            // font-family: "Poppins", sans-serif;
+            a {
+                display: flex;
+                flex-direction: column;
+                color: variables.$mainTextColor2;
+                // font-weight: 700;
+                text-align: center;
+                text-decoration: none;
+                line-height: 1.6;
+    
+                span {
+                    color: variables.$mainTextColor2;
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+}
