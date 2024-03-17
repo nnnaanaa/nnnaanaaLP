@@ -1,8 +1,8 @@
-@use "../base/variables";
+@use "../base/variables" as *;
 
 @mixin frameBase(){
     position: fixed;
-    background-color: variables.$blueColor;
+    background-color: $blueColor;
     z-index: 9;
 }
 
@@ -28,7 +28,7 @@
             left: 20px;
             right: 0;
             border-radius: 50%;
-            box-shadow: 15px -15px 0 variables.$blueColor;
+            box-shadow: 15px -15px 0 $blueColor;
             transform:rotate(-90deg);  
         }
     }
@@ -48,7 +48,7 @@
             left: 20px;
             right: 0;
             border-radius: 50%;
-            box-shadow: 15px -15px 0 variables.$blueColor;
+            box-shadow: 15px -15px 0 $blueColor;
             transform:rotate(-90deg);  
             transition: all .5s; 
         }
@@ -61,7 +61,7 @@
             top: 80px;
             right: 20px;
             border-radius: 50%;
-            box-shadow: 15px -15px 0 variables.$blueColor;
+            box-shadow: 15px -15px 0 $blueColor;
             transform:rotate(360deg);   
             transition: all .5s;
         }
@@ -99,7 +99,7 @@
             left: 20px;
             right: 0;
             border-radius: 50%;
-            box-shadow: 15px -15px 0 variables.$blueColor;
+            box-shadow: 15px -15px 0 $blueColor;
             transform:rotate(180deg);  
             transition: all .5s; 
         }
@@ -112,7 +112,7 @@
             top: -30px;
             right: 20px;
             border-radius: 50%;
-            box-shadow: 15px -15px 0 variables.$blueColor;
+            box-shadow: 15px -15px 0 $blueColor;
             transform:rotate(90deg);   
             transition: all .5s;
         }

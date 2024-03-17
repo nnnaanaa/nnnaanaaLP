@@ -1,14 +1,18 @@
-@use "../base/variables";
+@use "../base/variables" as *;
 
 @import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Noto+Sans+JP&display=swap');
 
 .nav-menu {
+    width: 100%;
     position: fixed;
     left: 50%;
-    top: 0%;
+    top: 1rem;
     transform: translateX(-50%);
     z-index: 9;
-    padding-top: 1rem;
+    // padding-top: 2rem;
+
+    display: flex;
+    justify-content: center;
 
     ul {
         display: flex;
@@ -26,15 +30,37 @@
             a {
                 display: flex;
                 flex-direction: column;
-                color: variables.$mainTextColor2;
+                color: $mainTextColor2;
                 // font-weight: 700;
                 text-align: center;
                 text-decoration: none;
                 line-height: 1.6;
     
                 span {
-                    color: variables.$mainTextColor2;
+                    color: $mainTextColor2;
                     font-size: 1.5rem;
+                }
+            }
+        }
+    }
+    .media {
+        display: flex;
+        justify-content: center;
+        flex: 1;
+        list-style: none;
+
+        li:not(:last-child) {
+            margin-right: 50px;
+        }
+        li {
+            display: flex;
+            align-items: center;
+            a {
+                color: $mainTextColor2;
+                text-decoration: none;
+                line-height: 1.6;
+                i {
+                    font-size: 1.5rem ;
                 }
             }
         }
