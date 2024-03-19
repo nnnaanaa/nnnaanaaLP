@@ -1,6 +1,5 @@
 
 const scbk_point = 200
-
 window.addEventListener("scroll", function () {
     // ヘッダーを変数の中に格納する
     const top_border = document.querySelector(".top-border");
@@ -10,4 +9,25 @@ window.addEventListener("scroll", function () {
     top_border.classList.toggle("scroll", window.scrollY > scbk_point);
     bottom_border.classList.toggle("scroll", window.scrollY > scbk_point);
     nav_menu.classList.toggle("scroll", window.scrollY > scbk_point);
+});
+
+// const swiper = new Swiper(".swiper", {});
+const swiper = new Swiper(".swiper", {
+    slidesPerView: 1,
+    breakpoints: {
+      // 768px以上の場合
+      768: {
+        slidesPerView: 1
+      }
+    },
+    // ページネーションが必要なら追加
+    pagination: {
+      el: ".swiper-pagination",
+      // type: "progressbar" /* この行を追加 */
+    },
+    // ナビボタンが必要なら追加
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev"
+    }
 });

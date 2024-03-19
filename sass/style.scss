@@ -2,6 +2,7 @@
 @use "pages/frame_border";
 @use "pages/navigation";
 @use "pages/header" as *;
+@use "pages/swiper" as *;
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Noto+Sans+JP&display=swap');
@@ -31,8 +32,33 @@ body {
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center top;
+    mix-blend-mode: multiply;
 }
 
 .main {
     height: 100vh;
+
+    .main-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .page-title {
+            font-family: 'Cherry Bomb One', system-ui;
+            // font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 5rem;
+            color: variables.$blueColor;
+        }
+        section {
+            width: 100%;
+            .swiper {
+                @include swiper();
+                width: 60%;
+                height: auto;
+                box-shadow: 15px 15px 0 variables.$blueColor;
+            }
+        }
+    }
 }
+

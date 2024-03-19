@@ -15,6 +15,9 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+
     <link rel="stylesheet" href="/sass/style.css">
     <title>nnnaanaaLP</title>
 </head>
@@ -32,7 +35,7 @@
         <!-- <div class="logo"><img src="./img/loader-char.png" alt=""></div> -->
         <ul>
             <li><a href=""><span>About</span></a></li>
-            <li><a href=""><span>News</span></a></li>
+            <li><a href=""><span>Work</span></a></li>
             <li><a href=""><span>Contact</span></a></li>
         </ul>
         <div class="media">
@@ -43,6 +46,7 @@
     </div>
 
     <div class="main-bg">
+        <!-- header -->
         <div class="header wrapper">
             <div class="header-content">
                 <section class="upper-content">
@@ -60,6 +64,34 @@
             </div>
         </div>
         <div class="main wrapper">
+            <div class="main-content wrapper">
+                <h2 class="page-title">Work</h2>
+                <section>
+                    <!-- スライダーのコンテナ -->
+                    <div class="swiper">
+                        <!-- 必要に応じたwrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- スライド -->
+                            <div class="swiper-slide">
+                                <img src="./img/_background-img.png" alt="">                                
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./img/__background-img.png" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./img/00320-1061443280.png" alt="">
+                            </div>
+                        </div>
+                        <!-- 必要に応じてページネーション -->
+                        <div class="swiper-pagination"></div>
+                          <!-- 必要に応じてナビボタン -->
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+                </section>
+                <section>
+                </section>
+            </div>
         </div>
     </div>
 
@@ -70,6 +102,7 @@
         </div>
     </footer> -->
 
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script src="./js/main.js"></script>
 </body>
 </html>
