@@ -251,6 +251,25 @@
   transform: scale(1, 1); /*ホバー後、x軸方向に1（相対値）伸長*/
 }
 
+.gallery {
+  height: 100vh;
+  margin: 10px 50px;
+  text-align: center;
+}
+.gallery img {
+  width: 380px;
+  height: 210px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  padding: 10px;
+  filter: grayscale(100%);
+  transition: all 0.7s;
+}
+.gallery img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -262,6 +281,7 @@ body {
   height: 100vh;
   font-family: "Noto Sans JP", sans-serif;
   line-height: 1.7;
+  background-color: #FFF;
 }
 
 .wrapper {

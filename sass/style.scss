@@ -3,6 +3,7 @@
 @use "pages/navigation";
 @use "pages/header" as *;
 @use "pages/swiper" as *;
+@use "pages/gallery" as *; // お試し
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Noto+Sans+JP&display=swap');
@@ -19,6 +20,7 @@ body {
     height: 100vh;
     font-family: 'Noto Sans JP', sans-serif;
     line-height: 1.7;
+    background-color: #FFF;
 }
 
 .wrapper {

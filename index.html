@@ -18,6 +18,9 @@
     <!-- swiper -->
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
 
+    <!-- lightbox2 cdnjs -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.css" integrity="sha512-Woz+DqWYJ51bpVk5Fv0yES/edIMXjj3Ynda+KWTIkGoynAMHrqTcDUQltbipuiaD5ymEo9520lyoVOo9jCQOCA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="stylesheet" href="/sass/style.css">
     <title>nnnaanaaLP</title>
 </head>
@@ -63,35 +66,20 @@
                 </section>
             </div>
         </div>
-        <div class="main wrapper">
-            <div class="main-content wrapper">
-                <h2 class="page-title">Work</h2>
-                <section>
-                    <!-- スライダーのコンテナ -->
-                    <div class="swiper">
-                        <!-- 必要に応じたwrapper -->
-                        <div class="swiper-wrapper">
-                            <!-- スライド -->
-                            <div class="swiper-slide">
-                                <img src="./img/_background-img.png" alt="">                                
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="./img/__background-img.png" alt="">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="./img/00320-1061443280.png" alt="">
-                            </div>
-                        </div>
-                        <!-- 必要に応じてページネーション -->
-                        <div class="swiper-pagination"></div>
-                          <!-- 必要に応じてナビボタン -->
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>
-                    </div>
-                </section>
-                <section>
-                </section>
-            </div>
+        <div class="gallery wrapper">
+            <h2 class="page-title">Work</h2>
+            <a href="./img/00004-3112562796.png"  data-lightbox="roadtrip">
+                <img src="./img/00004-3112562796.png" alt="">
+            </a>
+            <a href="./img/00061-1691007395_cleanup_1_cleanup.png"  data-lightbox="roadtrip">
+                <img src="./img/00061-1691007395_cleanup_1_cleanup.png" alt="">
+            </a>
+            <a href="./img/background-img.png"  data-lightbox="roadtrip">
+                <img src="./img/background-img.png" alt="">
+            </a>
+            <a href="./img/background-img-cafe.png"  data-lightbox="roadtrip">
+                <img src="./img/background-img-cafe.png" alt="">
+            </a>
         </div>
     </div>
 
@@ -101,8 +89,15 @@
             <p><small>&copy; 2024 nnnaanaa</small></p>
         </div>
     </footer> -->
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js" integrity="sha512-Ixzuzfxv1EqafeQlTCufWfaC6ful6WFqIz4G+dWvK0beHw0NVJwvCKSgafpy5gwNqKmgUfIBraVwkKI+Cz0SEQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./js/main.js"></script>
+    <script>
+        lightbox.option({
+          'resizeDuration': 400,
+          'wrapAround': true
+        })
+    </script>
 </body>
 </html>
