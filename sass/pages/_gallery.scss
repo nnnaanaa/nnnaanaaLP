@@ -1,7 +1,17 @@
+@use "../base/variables" as *;
+
 .gallery {
     height: 100vh;
     margin: 10px 50px;
     text-align: center;
+
+    .page-title {
+        font-family: 'Cherry Bomb One', system-ui;
+        // font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        font-size: 5rem;
+        color: $blueColor;
+    }
 
     img {
         width: 380px;

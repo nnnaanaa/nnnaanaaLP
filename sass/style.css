@@ -256,6 +256,12 @@
   margin: 10px 50px;
   text-align: center;
 }
+.gallery .page-title {
+  font-family: "Cherry Bomb One", system-ui;
+  font-weight: 600;
+  font-size: 5rem;
+  color: #070F2B;
+}
 .gallery img {
   width: 380px;
   height: 210px;
