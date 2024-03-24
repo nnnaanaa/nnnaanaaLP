@@ -1,8 +1,8 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Noto+Sans+JP&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Noto+Sans+JP&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
 .frame-border .left-border,
 .frame-border .top-border,
 .frame-border .right-border,
@@ -73,6 +73,7 @@
   right: 0px;
   width: 20px;
   height: 100%;
+  transition: all 0.5s;
 }
 .frame-border .bottom-border {
   bottom: 0px;
@@ -227,7 +228,7 @@
   display: flex;
   align-items: end;
   flex-direction: column;
-  font-family: "Poppins", sans-serif;
+  font-family: "Quicksand", sans-serif;
   color: #070F2B;
 }
 .header .header-content .lower-content .msg a {
@@ -251,29 +252,140 @@
   transform: scale(1, 1); /*ホバー後、x軸方向に1（相対値）伸長*/
 }
 
+/*####################
+Contact Form
+####################*/
 .gallery {
   height: 100vh;
   margin: 10px 50px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 .gallery .page-title {
   font-family: "Cherry Bomb One", system-ui;
   font-weight: 600;
   font-size: 5rem;
   color: #070F2B;
+  padding-left: 30px;
+  line-height: 6rem;
 }
-.gallery img {
-  width: 380px;
-  height: 210px;
+.gallery ul {
+  -moz-column-count: 3;
+       column-count: 3;
+  padding: 20px;
+  list-style: none;
+}
+.gallery ul .item {
+  -moz-column-break-inside: avoid;
+       break-inside: avoid;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.gallery ul .item img {
+  flex-grow: 1;
+  display: block;
+  width: 100%;
+  height: 50vh;
+  border-radius: 50px 0px 0px 0px;
+  box-shadow: 15px 15px 0 #DBD8E3;
+  padding-left: 10px;
   -o-object-fit: cover;
      object-fit: cover;
-  padding: 10px;
-  filter: grayscale(100%);
+  filter: grayscale(50%);
   transition: all 0.7s;
 }
-.gallery img:hover {
+.gallery ul .item img:hover {
   filter: grayscale(0%);
-  transform: scale(1.1);
+  transform: scale(1.05);
+}
+.gallery ul .item p {
+  padding: 10px;
+  font-size: 13px;
+  text-align: center;
+  color: #DBD8E3;
+}
+
+.contact {
+  height: 100vh;
+}
+.contact .page-title {
+  font-family: "Cherry Bomb One", system-ui;
+  font-weight: 600;
+  font-size: 5rem;
+  color: #070F2B;
+  padding-left: 30px;
+  line-height: 6rem;
+}
+.contact section .contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contact section .contact-form .input-container {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  padding: 6px 12px;
+}
+.contact section .contact-form .input-container .left-input {
+  width: 50%;
+  height: auto;
+}
+.contact section .contact-form .input-container .left-input label {
+  font-size: 20px;
+  display: block;
+  color: #070F2B;
+  font-weight: bold;
+}
+.contact section .contact-form .input-container .left-input input[type=text],
+.contact section .contact-form .input-container .left-input input[type=email] {
+  height: auto;
+  width: 100%;
+  background: #DBD8E3;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  border: 2px #070F2B solid;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1rem;
+}
+.contact section .contact-form .input-container .right-input {
+  width: 50%;
+  height: auto;
+}
+.contact section .contact-form .input-container .right-input label {
+  font-size: 20px;
+  display: block;
+  color: #070F2B;
+  font-weight: bold;
+}
+.contact section .contact-form .input-container .right-input textarea {
+  width: 100%;
+  background: #DBD8E3;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  border: 2px #070F2B solid;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1rem;
+  height: 8rem;
+}
+.contact section .contact-form input[type=submit] {
+  text-align: center;
+  border: 2px #070F2B solid;
+  background-color: #DBD8E3;
+  font-weight: bold;
+  color: #070F2B;
+  border-radius: 5px;
+  padding: 12px 24px;
+  cursor: pointer;
+  line-height: 1;
+  font-size: 20px;
 }
 
 * {
@@ -304,87 +416,15 @@ body {
   mix-blend-mode: multiply;
 }
 
-.main {
-  height: 100vh;
-}
-.main .main-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.main .main-content .page-title {
-  font-family: "Cherry Bomb One", system-ui;
-  font-weight: 600;
-  font-size: 5rem;
-  color: #070F2B;
-}
-.main .main-content section {
+footer {
+  position: fixed;
+  z-index: 99;
+  bottom: 0;
   width: 100%;
-}
-.main .main-content section .swiper {
-  /* 次ページボタンのスタイル */
-  /* 前ページボタンのスタイル */
-  width: 60%;
-  height: auto;
-  box-shadow: 15px 15px 0 #070F2B;
-}
-.main .main-content section .swiper .swiper-wrapper {
-  /* wrapperのサイズを調整 */
-  width: 100%;
-  height: 300px;
-  cursor: pointer;
-}
-.main .main-content section .swiper .swiper-wrapper .swiper-slide {
-  /* スライドのサイズを調整、中身のテキスト配置調整、背景色 */
-  color: #ffffff;
-  width: 100%;
-  height: 100%;
   text-align: center;
-  line-height: 300px;
+  padding: 6px 0;
 }
-.main .main-content section .swiper .swiper-wrapper .swiper-slide img {
-  display: block;
-  width: 100%;
-  height: auto;
-  mix-blend-mode: multiply;
-}
-.main .main-content section .swiper .swiper-wrapper .swiper-slide:nth-child(3n+1) {
-  /*1、4、7、3n+1枚目の背景色 */
-  background-color: #878787;
-}
-.main .main-content section .swiper .swiper-wrapper .swiper-slide:nth-child(3n+2) {
-  /*2、5、8、3n+2枚目の背景色 */
-  background-color: #878787;
-}
-.main .main-content section .swiper .swiper-wrapper .swiper-slide:nth-child(3n+3) {
-  /*3、6、9、3n+3枚目の背景色 */
-  background-color: #878787;
-}
-.main .main-content section .swiper .swiper-pagination-bullet {
-  width: 12px !important;
-  height: 12px !important;
-  margin: 0 0 0 10px !important;
-  background: #333 !important;
-}
-.main .main-content section .swiper .swiper-pagination-bullet:first-child {
-  margin: 0 !important;
-}
-.main .main-content section .swiper .swiper-button-prev,
-.main .main-content section .swiper .swiper-button-next {
-  width: 24px; /* ボタンの幅 */
-  height: 40px; /* ボタンの高さ */
-  background-size: 24px 40px; /* 表示したいサイズ */
-  transform: translateY(-50%);
-  margin-top: 0;
-}
-.main .main-content section .swiper .swiper-button-next {
-  background-image: url("https://kiomiru.co.jp/blog/wp-content/uploads/2021/09/img_arrow_black_01.png");
-}
-.main .main-content section .swiper .swiper-button-prev {
-  background-image: url("https://kiomiru.co.jp/blog/wp-content/uploads/2021/09/img_arrow_black_01.png");
-  transform: translateY(-50%) scale(-1, 1); /* 左右反転 */
-}
-.main .main-content section .swiper .swiper-button-prev:after,
-.main .main-content section .swiper .swiper-button-next:after {
-  display: none;
+footer p {
+  color: #DBD8E3;
+  font-size: 0.875rem;
 }/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,61 @@
+@use "../base/variables" as *;
+@use "../base/function" as *;
+
+.contact {
+    height: 100vh;
+
+    .page-title {
+        @include page-title();
+    }
+    section {
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .input-container {
+                font-family: 'Poppins', sans-serif;
+                // font-family: "Quicksand", sans-serif;
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                gap: 2rem;
+                margin-bottom: 2rem;
+                border-radius: 10px;
+                padding: 6px 12px;
+
+                .left-input {
+                    width: 50%;
+                    height: auto;
+
+                    label {
+                        @include label-design();
+                    }
+
+                    input[type="text"],
+                    input[type="email"] {
+                        height: auto;
+                        @include input-form-design();
+                    }
+                }
+
+                .right-input {
+                    width: 50%;
+                    height: auto;
+
+                    label {
+                        @include label-design();
+                    }
+
+                    textarea {
+                        @include input-form-design();
+                        height: 8rem;
+                    }
+                }
+            }
+            input[type="submit"] {
+                @include submit-button();
+            }
+        }
+    }
+}

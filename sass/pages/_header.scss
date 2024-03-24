@@ -17,6 +17,7 @@
 
             .rotate-word {
                 font-family: 'Cherry Bomb One', system-ui;
+                // font-family: "Quicksand", sans-serif;
                 font-size: 7rem;
                 display: block;
                 height: 180px;
@@ -60,7 +61,8 @@
                 display: flex;
                 align-items: end;
                 flex-direction: column;
-                font-family: 'Poppins', sans-serif;
+                // font-family: 'Poppins', sans-serif;
+                font-family: "Quicksand", sans-serif;
                 color: $blueColor;
 
                 a {

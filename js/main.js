@@ -1,33 +1,24 @@
 
-const scbk_point = 200
+const scbk_point = 300
+// ヘッダーを変数の中に格納する
+const top_border = document.querySelector(".top-border");
+const bottom_border = document.querySelector(".bottom-border");
+const left_border = document.querySelector(".left-border");
+const right_border = document.querySelector(".right-border");
+const nav_menu = document.querySelector(".nav-menu");
+
 window.addEventListener("scroll", function () {
-    // ヘッダーを変数の中に格納する
-    const top_border = document.querySelector(".top-border");
-    const bottom_border = document.querySelector(".bottom-border");
-    const nav_menu = document.querySelector(".nav-menu");
     // 100px以上スクロールしたらヘッダーに「scroll」クラスをつける
     top_border.classList.toggle("scroll", window.scrollY > scbk_point);
     bottom_border.classList.toggle("scroll", window.scrollY > scbk_point);
+    left_border.classList.toggle("scroll", window.scrollY > scbk_point);
+    right_border.classList.toggle("scroll", window.scrollY > scbk_point);
     nav_menu.classList.toggle("scroll", window.scrollY > scbk_point);
 });
 
-// const swiper = new Swiper(".swiper", {});
-const swiper = new Swiper(".swiper", {
-    slidesPerView: 1,
-    breakpoints: {
-      // 768px以上の場合
-      768: {
-        slidesPerView: 1
-      }
-    },
-    // ページネーションが必要なら追加
-    pagination: {
-      el: ".swiper-pagination",
-      // type: "progressbar" /* この行を追加 */
-    },
-    // ナビボタンが必要なら追加
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev"
-    }
-});
+/*####################
+ScrollReveal
+####################*/
+ScrollReveal({ reset: false, distance: "60px" , duration: 2000, delay: 200});
+ScrollReveal().reveal('.gallery ul li', { reset: true, delay: 100, origin: "bottom", duration: 2000, interval: 100});
+ScrollReveal().reveal('.contact .contact-form', { reset: true, delay: 100, origin: "bottom", duration: 2000});

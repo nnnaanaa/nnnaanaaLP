@@ -1,13 +1,15 @@
-@use "base/variables";
-@use "pages/frame_border";
+@use "base/variables" as *;
+@use "pages/frame_border" as *;
 @use "pages/navigation";
 @use "pages/header" as *;
 @use "pages/swiper" as *;
-@use "pages/gallery" as *; // お試し
+@use "pages/gallery" as *;
+@use "pages/contact" as *;
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Noto+Sans+JP&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 
 * {
     margin: 0;
@@ -15,7 +17,7 @@
 }
 
 body {
-    color: variables.$mainTextColor;
+    color: $mainTextColor;
     font-size: 100%;
     height: 100vh;
     font-family: 'Noto Sans JP', sans-serif;
@@ -37,30 +39,16 @@ body {
     mix-blend-mode: multiply;
 }
 
-.main {
-    height: 100vh;
+footer {
+    position: fixed;
+    z-index: 99;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 6px 0;
 
-    .main-content {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        .page-title {
-            font-family: 'Cherry Bomb One', system-ui;
-            // font-family: 'Poppins', sans-serif;
-            font-weight: 600;
-            font-size: 5rem;
-            color: variables.$blueColor;
-        }
-        section {
-            width: 100%;
-            .swiper {
-                @include swiper();
-                width: 60%;
-                height: auto;
-                box-shadow: 15px 15px 0 variables.$blueColor;
-            }
-        }
+    p {
+        color: $mainTextColor2;
+        font-size: 0.875rem;
     }
 }
-

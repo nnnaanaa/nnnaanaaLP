@@ -1,0 +1,46 @@
+@use "../base/variables" as *;
+
+@mixin page-title() {
+    font-family: 'Cherry Bomb One', system-ui;
+    // font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 5rem;
+    color: $blueColor;
+    // border-bottom: 5px solid $blueColor;
+    // border-left: 20px solid $blueColor;
+    padding-left: 30px;
+    line-height: 6rem;
+}
+
+/*####################
+Contact Form
+####################*/
+@mixin label-design() {
+    font-size: 20px;
+    display: block;
+    color: $blueColor;
+    font-weight: bold;
+}
+
+@mixin submit-button() {
+    text-align: center;
+    border: 2px $blueColor solid;
+    background-color: $mainTextColor2;
+    font-weight: bold;
+    color: $blueColor;
+    border-radius: 5px;
+    padding: 12px 24px;
+    cursor: pointer;
+    line-height: 1;
+    font-size: 20px;
+}
+
+@mixin input-form-design() {
+    width: 100%;
+    background: $mainTextColor2;
+    backdrop-filter: blur(20px);
+    border: 2px $blueColor solid;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+}
