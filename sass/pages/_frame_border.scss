@@ -3,7 +3,7 @@
 @mixin frameBase(){
     position: fixed;
     background-color: $blueColor;
-    z-index: 9;
+    z-index: 2;
 }
 
 .frame-border {
