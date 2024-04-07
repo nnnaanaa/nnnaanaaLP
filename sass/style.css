@@ -148,6 +148,10 @@
 .nav-menu ul li a span {
   color: #DBD8E3;
   font-size: 1.5rem;
+  transition: all 0.5s;
+}
+.nav-menu ul li a span:hover {
+  opacity: 0.7;
 }
 .nav-menu .media {
   display: flex;
@@ -169,6 +173,10 @@
 }
 .nav-menu .media li a i {
   font-size: 1.5rem;
+  transition: all 0.5s;
+}
+.nav-menu .media li a i:hover {
+  opacity: 0.7;
 }
 
 .header {
@@ -182,42 +190,49 @@
   padding-right: 50px;
 }
 .header .header-content .upper-content {
+  grid-row: 1/2;
   width: 100%;
   display: flex;
   align-items: end;
 }
 .header .header-content .upper-content .rotate-word {
-  font-family: "Cherry Bomb One", system-ui;
-  margin: 0;
-  padding: 0;
-  font-size: 7rem;
-  display: block;
-  height: 180px;
-  color: #070F2B;
+  display: flex;
   overflow: hidden;
-  animation: rotation-word 4s 1.2s infinite;
+  color: #070F2B;
+  font-family: "Cherry Bomb One", system-ui;
+  font-size: 6rem;
 }
-.header .header-content .upper-content .rotate-word span[class~=rotate-word] {
+.header .header-content .upper-content .rotate-word span {
   display: block;
-  animation: move-word 8s steps(2) infinite;
+  transform: translate(0, 100%);
+  transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s;
 }
-@keyframes rotation-word {
-  50% {
-    transform: rotateX(0);
-  }
-  100% {
-    transform: rotateX(1turn);
-  }
+.header .header-content .upper-content .rotate-word span:nth-child(2) {
+  transition-delay: 0.07s;
 }
-@keyframes move-word {
-  0% {
-    transform: translateY(0px);
-  }
-  100% {
-    transform: translateY(-340px);
-  }
+.header .header-content .upper-content .rotate-word span:nth-child(3) {
+  transition-delay: 0.14s;
+}
+.header .header-content .upper-content .rotate-word span:nth-child(4) {
+  transition-delay: 0.21s;
+}
+.header .header-content .upper-content .rotate-word span:nth-child(5) {
+  transition-delay: 0.28s;
+}
+.header .header-content .upper-content .rotate-word span:nth-child(6) {
+  transition-delay: 0.35s;
+}
+.header .header-content .upper-content .rotate-word span:nth-child(7) {
+  transition-delay: 0.42s;
+}
+.header .header-content .upper-content .rotate-word span:nth-child(8) {
+  transition-delay: 0.49s;
+}
+.header .header-content .upper-content .rotate-word.-visible span {
+  transform: translate(0, 0);
 }
 .header .header-content .lower-content {
+  grid-row: 2/3;
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -290,16 +305,20 @@ Contact Form
   width: 100%;
   height: 50vh;
   border-radius: 50px 0px 0px 0px;
-  box-shadow: 15px 15px 0 #DBD8E3;
+  box-shadow: 15px 15px 0 #070F2B;
   padding-left: 10px;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: left bottom;
+     object-position: left bottom;
   filter: grayscale(50%);
   transition: all 0.7s;
 }
 .gallery ul .item img:hover {
   filter: grayscale(0%);
   transform: scale(1.05);
+  -o-object-position: left top;
+     object-position: left top;
 }
 .gallery ul .item p {
   padding: 10px;

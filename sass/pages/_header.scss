@@ -11,45 +11,40 @@
         padding-right: 50px;
 
         .upper-content {
+            grid-row:  1/ 2;
             width: 100%;
             display: flex;
             align-items: end;
 
             .rotate-word {
-                font-family: 'Cherry Bomb One', system-ui;
-                // font-family: "Quicksand", sans-serif;
-                margin: 0;
-                padding: 0;
-                font-size: 7rem;
-                display: block;
-                height: 180px;
-                color: $blueColor;
+                display: flex;
                 overflow: hidden;
-                animation: rotation-word 4s 1.2s infinite;
+                color: $blueColor;
+                font-family: 'Cherry Bomb One', system-ui;
+                font-size: 6rem;
 
-                span[class~="rotate-word"] {
+                span {
                     display: block;
-                    animation: move-word 8s steps(2) infinite;
+                    transform: translate(0, 100%);
+                    transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s;
+
+                    @for $i from 1 through 7 {
+                        &:nth-child(#{$i + 1}) {
+                          $delay: $i * 0.07 + s;
+                          transition-delay: $delay;
+                        }
+                    }
                 }
-            }
-            @keyframes rotation-word {
-                50% {
-                    transform: rotateX(0);
-                }
-                100% {
-                    transform: rotateX(1turn);
-                }
-            }
-            @keyframes move-word {
-                0% {
-                    transform: translateY(0px);
-                }
-                100% {
-                    transform: translateY(-340px);
+
+                &.-visible {
+                    span {
+                        transform: translate(0, 0);
+                    }
                 }
             }
         }
         .lower-content {
+            grid-row: 2 / 3;
             width: 100%;
             display: grid;
             grid-template-columns: 1fr 1fr;

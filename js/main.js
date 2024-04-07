@@ -17,8 +17,22 @@ window.addEventListener("scroll", function () {
 });
 
 /*####################
+Rotate-Word
+####################*/
+const CLASSNAME = "-visible";
+const TIMEOUT = 100;
+const $target = $(".rotate-word");
+
+setInterval(() => {
+  $target.addClass(CLASSNAME);
+  setTimeout(() => {
+    // $target.removeClass(CLASSNAME);
+  }, TIMEOUT);
+}, TIMEOUT * 2);
+
+/*####################
 ScrollReveal
 ####################*/
 ScrollReveal({ reset: false, distance: "60px" , duration: 2000, delay: 200});
-ScrollReveal().reveal('.gallery ul li', { reset: true, delay: 100, origin: "bottom", duration: 2000, interval: 100});
-ScrollReveal().reveal('.contact .contact-form', { reset: true, delay: 100, origin: "bottom", duration: 2000});
+ScrollReveal().reveal('.gallery ul li', { reset: false, delay: 100, origin: "bottom", duration: 2000, interval: 100});
+ScrollReveal().reveal('.contact .contact-form', { reset: false, delay: 100, origin: "bottom", duration: 2000});
