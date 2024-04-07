@@ -3,6 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Noto+Sans+JP&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 .frame-border .left-border,
 .frame-border .top-border,
 .frame-border .right-border,
@@ -277,14 +278,15 @@ Contact Form
   margin: 10px 50px;
   display: flex;
   flex-direction: column;
+  gap: 2rem;
 }
 .gallery .page-title {
   font-family: "Cherry Bomb One", system-ui;
-  font-weight: 600;
-  font-size: 5rem;
+  font-size: 4rem;
   color: #070F2B;
   padding-left: 30px;
   line-height: 6rem;
+  text-align: center;
 }
 .gallery ul {
   -moz-column-count: 3;
@@ -303,9 +305,8 @@ Contact Form
   flex-grow: 1;
   display: block;
   width: 100%;
-  height: 50vh;
-  border-radius: 50px 0px 0px 0px;
-  box-shadow: 15px 15px 0 #070F2B;
+  max-height: 50vh;
+  border-radius: 50px 15px 0px 15px;
   padding-left: 10px;
   -o-object-fit: cover;
      object-fit: cover;
@@ -319,6 +320,7 @@ Contact Form
   transform: scale(1.05);
   -o-object-position: left top;
      object-position: left top;
+  box-shadow: 15px 15px 0 #070F2B;
 }
 .gallery ul .item p {
   padding: 10px;
@@ -329,14 +331,17 @@ Contact Form
 
 .contact {
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 .contact .page-title {
   font-family: "Cherry Bomb One", system-ui;
-  font-weight: 600;
-  font-size: 5rem;
+  font-size: 4rem;
   color: #070F2B;
   padding-left: 30px;
   line-height: 6rem;
+  text-align: center;
 }
 .contact section .contact-form {
   display: flex;

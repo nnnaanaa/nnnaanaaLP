@@ -20,7 +20,7 @@ window.addEventListener("scroll", function () {
 Rotate-Word
 ####################*/
 const CLASSNAME = "-visible";
-const TIMEOUT = 1500;
+const TIMEOUT = 1000;
 const $target = $(".rotate-word");
 
 setInterval(() => {

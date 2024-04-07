@@ -2,14 +2,15 @@
 
 @mixin page-title() {
     font-family: 'Cherry Bomb One', system-ui;
+    // font-family: "Nunito", sans-serif;
     // font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 5rem;
+    font-size: 4rem;
     color: $blueColor;
     // border-bottom: 5px solid $blueColor;
     // border-left: 20px solid $blueColor;
     padding-left: 30px;
     line-height: 6rem;
+    text-align: center;
 }
 
 /*####################
