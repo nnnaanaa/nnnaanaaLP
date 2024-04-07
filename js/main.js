@@ -20,15 +20,15 @@ window.addEventListener("scroll", function () {
 Rotate-Word
 ####################*/
 const CLASSNAME = "-visible";
-const TIMEOUT = 100;
+const TIMEOUT = 1500;
 const $target = $(".rotate-word");
 
 setInterval(() => {
   $target.addClass(CLASSNAME);
   setTimeout(() => {
     // $target.removeClass(CLASSNAME);
-  }, TIMEOUT);
-}, TIMEOUT * 2);
+  }, TIMEOUT)
+}, TIMEOUT);
 
 /*####################
 ScrollReveal
