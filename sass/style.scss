@@ -5,6 +5,7 @@
 @use "pages/swiper" as *;
 @use "pages/gallery" as *;
 @use "pages/contact" as *;
+@use "pages/media_query" as *;
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Noto+Sans+JP&display=swap');
@@ -38,6 +39,10 @@ body {
     background-repeat: no-repeat;
     background-position: center top;
     mix-blend-mode: multiply;
+
+    @include media(sm) {
+        background-size: 250%;
+    }
 }
 
 footer {

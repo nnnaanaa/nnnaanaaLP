@@ -1,4 +1,5 @@
 @use "../base/variables" as *;
+@use "media_query" as *;
 
 .header {
     height: 100vh;
@@ -10,11 +11,21 @@
         padding-left: 50px;
         padding-right: 50px;
 
+        @include media(sm) {
+            padding-left: 5%;
+            padding-right: 5%;
+            gap: 5%;
+        }
+
         .upper-content {
             grid-row:  1/ 2;
             width: 100%;
             display: flex;
             align-items: end;
+
+            @include media(sm) {
+                justify-content: center;
+            }
 
             .rotate-word {
                 display: flex;
@@ -23,8 +34,12 @@
                 font-family: 'Cherry Bomb One', system-ui;
                 font-size: 6rem;
 
+                @include media(sm) {
+                    font-size: 2.75rem;
+                }
+
                 span {
-                    display: block;
+                    display: inline-block;
                     transform: translate(0, 100%);
                     transition: transform cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s;
 
@@ -49,6 +64,11 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
 
+            @include media(sm) {
+                grid-template-columns: 1fr;
+                text-align: start;
+            }
+
             .msg {
                 grid-column: 1 / 2;
                 grid-row: 1 / 2;
@@ -61,6 +81,10 @@
                 // font-family: 'Poppins', sans-serif;
                 font-family: "Quicksand", sans-serif;
                 color: $blueColor;
+
+                @include media(sm) {
+                    font-size: 1rem;
+                }
 
                 a {
                     color: $blueColor2;
