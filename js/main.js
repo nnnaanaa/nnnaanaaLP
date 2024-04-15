@@ -36,3 +36,17 @@ ScrollReveal
 ScrollReveal({ reset: false, distance: "60px" , duration: 2000, delay: 200});
 ScrollReveal().reveal('.gallery ul li', { reset: false, delay: 100, origin: "bottom", duration: 2000, interval: 100});
 ScrollReveal().reveal('.contact .contact-form', { reset: false, delay: 100, origin: "bottom", duration: 2000});
+
+
+/*####################
+side navigation
+####################*/
+document.addEventListener('DOMContentLoaded', function () {
+    const btn = document.querySelector('.btn-trigger');
+    const sidenav = document.querySelector('.sidenav-trigger');
+
+    btn.addEventListener('click', function() {
+        this.classList.toggle('active');
+        sidenav.classList.toggle('active');
+    });
+});

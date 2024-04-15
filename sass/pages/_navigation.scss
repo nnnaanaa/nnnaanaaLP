@@ -1,4 +1,6 @@
 @use "../base/variables" as *;
+@use "../base/function" as *;
+@use "media_query" as *;
 
 .nav-menu {
     width: 100%;
@@ -7,19 +9,25 @@
     top: 1rem;
     transform: translateX(-50%);
     z-index: 9999;
+    transition: all .5s;
+
     display: flex;
     justify-content: center;
-    transition: all .5s;
 
     &.scroll {
         top: 0px;
     }
+
 
     ul {
         display: flex;
         justify-content: center;
         flex: 1;
         list-style: none;
+
+        @include media(sm) {
+            display: none !important;
+        }
 
         li:not(:last-child) {
             margin-right: 50px;
@@ -74,4 +82,35 @@
             }
         }
     }
+
+    .btn-trigger {
+        position: fixed;
+        // top: 40px;
+        right: 40px;
+        width: 40px;
+        height: 34px;
+        cursor: pointer;
+        z-index: 9999;
+
+        span {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background-color: $mainTextColor2;
+            border-radius: 4px;
+            display: inline-block;
+            transition: all .5s;
+            box-sizing: border-box;
+        }
+
+        span:nth-of-type(1) {
+            top: 2px;
+        }
+
+        span:nth-of-type(2) {
+            bottom: 2px;
+        }
+    }
+    @include btn-07();
 }
